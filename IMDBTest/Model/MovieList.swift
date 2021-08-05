@@ -8,7 +8,7 @@
 import Foundation
 
 struct MovieList: Decodable {
-    var result: [Result]
+    var results: [Result]
 }
 
 struct Result: Decodable {

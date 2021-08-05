@@ -20,6 +20,9 @@
 		E1F5E3BF26BC825900F90A23 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F5E3BE26BC825900F90A23 /* Service.swift */; };
 		E1F5E3C826BC8A0700F90A23 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F5E3C726BC8A0700F90A23 /* Constants.swift */; };
 		E1F5E3CD26BC8C8000F90A23 /* MovieList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F5E3CC26BC8C8000F90A23 /* MovieList.swift */; };
+		E1F5E3D326BC992000F90A23 /* MovieListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F5E3D226BC992000F90A23 /* MovieListViewModel.swift */; };
+		E1F5E3DB26BCA81100F90A23 /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F5E3D926BCA81100F90A23 /* MovieTableViewCell.swift */; };
+		E1F5E3DC26BCA81100F90A23 /* MovieTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1F5E3DA26BCA81100F90A23 /* MovieTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +62,9 @@
 		E1F5E3BE26BC825900F90A23 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		E1F5E3C726BC8A0700F90A23 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E1F5E3CC26BC8C8000F90A23 /* MovieList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieList.swift; sourceTree = "<group>"; };
+		E1F5E3D226BC992000F90A23 /* MovieListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListViewModel.swift; sourceTree = "<group>"; };
+		E1F5E3D926BCA81100F90A23 /* MovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
+		E1F5E3DA26BCA81100F90A23 /* MovieTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +115,8 @@
 		E1F5E36F26BC79A500F90A23 /* IMDBTest */ = {
 			isa = PBXGroup;
 			children = (
+				E1F5E3D726BCA7E000F90A23 /* View */,
+				E1F5E3D126BC990200F90A23 /* ViewModel */,
 				E1F5E3C626BC89F500F90A23 /* Utilities */,
 				E1F5E3BD26BC824800F90A23 /* Services */,
 				E1F5E3B626BC801B00F90A23 /* Model */,
@@ -165,6 +173,31 @@
 				E1F5E3C726BC8A0700F90A23 /* Constants.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		E1F5E3D126BC990200F90A23 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E1F5E3D226BC992000F90A23 /* MovieListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E1F5E3D726BCA7E000F90A23 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E1F5E3D826BCA7E700F90A23 /* Cell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E1F5E3D826BCA7E700F90A23 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				E1F5E3D926BCA81100F90A23 /* MovieTableViewCell.swift */,
+				E1F5E3DA26BCA81100F90A23 /* MovieTableViewCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -272,6 +305,7 @@
 			files = (
 				E1F5E37D26BC79A900F90A23 /* LaunchScreen.storyboard in Resources */,
 				E1F5E37A26BC79A900F90A23 /* Assets.xcassets in Resources */,
+				E1F5E3DC26BCA81100F90A23 /* MovieTableViewCell.xib in Resources */,
 				E1F5E37826BC79A500F90A23 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -297,6 +331,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1F5E3DB26BCA81100F90A23 /* MovieTableViewCell.swift in Sources */,
 				E1F5E37126BC79A500F90A23 /* AppDelegate.swift in Sources */,
 				E1F5E37326BC79A500F90A23 /* SceneDelegate.swift in Sources */,
 				E1F5E3AD26BC7A0D00F90A23 /* HomeViewController.swift in Sources */,
@@ -305,6 +340,7 @@
 				E1F5E3B926BC803400F90A23 /* Movie.swift in Sources */,
 				E1F5E3CD26BC8C8000F90A23 /* MovieList.swift in Sources */,
 				E1F5E3BF26BC825900F90A23 /* Service.swift in Sources */,
+				E1F5E3D326BC992000F90A23 /* MovieListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
