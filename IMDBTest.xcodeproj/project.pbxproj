@@ -17,6 +17,9 @@
 		E1F5E3AD26BC7A0D00F90A23 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F5E3AC26BC7A0D00F90A23 /* HomeViewController.swift */; };
 		E1F5E3B226BC7CE700F90A23 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F5E3B126BC7CE700F90A23 /* DetailViewController.swift */; };
 		E1F5E3B926BC803400F90A23 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F5E3B826BC803400F90A23 /* Movie.swift */; };
+		E1F5E3BF26BC825900F90A23 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F5E3BE26BC825900F90A23 /* Service.swift */; };
+		E1F5E3C826BC8A0700F90A23 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F5E3C726BC8A0700F90A23 /* Constants.swift */; };
+		E1F5E3CD26BC8C8000F90A23 /* MovieList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F5E3CC26BC8C8000F90A23 /* MovieList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +56,9 @@
 		E1F5E3AC26BC7A0D00F90A23 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		E1F5E3B126BC7CE700F90A23 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		E1F5E3B826BC803400F90A23 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		E1F5E3BE26BC825900F90A23 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		E1F5E3C726BC8A0700F90A23 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		E1F5E3CC26BC8C8000F90A23 /* MovieList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +109,8 @@
 		E1F5E36F26BC79A500F90A23 /* IMDBTest */ = {
 			isa = PBXGroup;
 			children = (
+				E1F5E3C626BC89F500F90A23 /* Utilities */,
+				E1F5E3BD26BC824800F90A23 /* Services */,
 				E1F5E3B626BC801B00F90A23 /* Model */,
 				E1F5E37026BC79A500F90A23 /* AppDelegate.swift */,
 				E1F5E37226BC79A500F90A23 /* SceneDelegate.swift */,
@@ -138,8 +146,25 @@
 			isa = PBXGroup;
 			children = (
 				E1F5E3B826BC803400F90A23 /* Movie.swift */,
+				E1F5E3CC26BC8C8000F90A23 /* MovieList.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		E1F5E3BD26BC824800F90A23 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				E1F5E3BE26BC825900F90A23 /* Service.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		E1F5E3C626BC89F500F90A23 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				E1F5E3C726BC8A0700F90A23 /* Constants.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,7 +301,10 @@
 				E1F5E37326BC79A500F90A23 /* SceneDelegate.swift in Sources */,
 				E1F5E3AD26BC7A0D00F90A23 /* HomeViewController.swift in Sources */,
 				E1F5E3B226BC7CE700F90A23 /* DetailViewController.swift in Sources */,
+				E1F5E3C826BC8A0700F90A23 /* Constants.swift in Sources */,
 				E1F5E3B926BC803400F90A23 /* Movie.swift in Sources */,
+				E1F5E3CD26BC8C8000F90A23 /* MovieList.swift in Sources */,
+				E1F5E3BF26BC825900F90A23 /* Service.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
