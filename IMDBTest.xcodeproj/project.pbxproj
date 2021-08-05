@@ -9,12 +9,14 @@
 /* Begin PBXBuildFile section */
 		E1F5E37126BC79A500F90A23 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F5E37026BC79A500F90A23 /* AppDelegate.swift */; };
 		E1F5E37326BC79A500F90A23 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F5E37226BC79A500F90A23 /* SceneDelegate.swift */; };
-		E1F5E37526BC79A500F90A23 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F5E37426BC79A500F90A23 /* ViewController.swift */; };
 		E1F5E37826BC79A500F90A23 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1F5E37626BC79A500F90A23 /* Main.storyboard */; };
 		E1F5E37A26BC79A900F90A23 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1F5E37926BC79A900F90A23 /* Assets.xcassets */; };
 		E1F5E37D26BC79A900F90A23 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1F5E37B26BC79A900F90A23 /* LaunchScreen.storyboard */; };
 		E1F5E38826BC79A900F90A23 /* IMDBTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F5E38726BC79A900F90A23 /* IMDBTestTests.swift */; };
 		E1F5E39326BC79A900F90A23 /* IMDBTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F5E39226BC79A900F90A23 /* IMDBTestUITests.swift */; };
+		E1F5E3AD26BC7A0D00F90A23 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F5E3AC26BC7A0D00F90A23 /* HomeViewController.swift */; };
+		E1F5E3B226BC7CE700F90A23 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F5E3B126BC7CE700F90A23 /* DetailViewController.swift */; };
+		E1F5E3B926BC803400F90A23 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F5E3B826BC803400F90A23 /* Movie.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +40,6 @@
 		E1F5E36D26BC79A500F90A23 /* IMDBTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IMDBTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1F5E37026BC79A500F90A23 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E1F5E37226BC79A500F90A23 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E1F5E37426BC79A500F90A23 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E1F5E37726BC79A500F90A23 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E1F5E37926BC79A900F90A23 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E1F5E37C26BC79A900F90A23 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +50,9 @@
 		E1F5E38E26BC79A900F90A23 /* IMDBTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IMDBTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1F5E39226BC79A900F90A23 /* IMDBTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMDBTestUITests.swift; sourceTree = "<group>"; };
 		E1F5E39426BC79A900F90A23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E1F5E3AC26BC7A0D00F90A23 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		E1F5E3B126BC7CE700F90A23 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		E1F5E3B826BC803400F90A23 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,13 +103,15 @@
 		E1F5E36F26BC79A500F90A23 /* IMDBTest */ = {
 			isa = PBXGroup;
 			children = (
+				E1F5E3B626BC801B00F90A23 /* Model */,
 				E1F5E37026BC79A500F90A23 /* AppDelegate.swift */,
 				E1F5E37226BC79A500F90A23 /* SceneDelegate.swift */,
-				E1F5E37426BC79A500F90A23 /* ViewController.swift */,
 				E1F5E37626BC79A500F90A23 /* Main.storyboard */,
 				E1F5E37926BC79A900F90A23 /* Assets.xcassets */,
 				E1F5E37B26BC79A900F90A23 /* LaunchScreen.storyboard */,
 				E1F5E37E26BC79A900F90A23 /* Info.plist */,
+				E1F5E3AC26BC7A0D00F90A23 /* HomeViewController.swift */,
+				E1F5E3B126BC7CE700F90A23 /* DetailViewController.swift */,
 			);
 			path = IMDBTest;
 			sourceTree = "<group>";
@@ -126,6 +132,14 @@
 				E1F5E39426BC79A900F90A23 /* Info.plist */,
 			);
 			path = IMDBTestUITests;
+			sourceTree = "<group>";
+		};
+		E1F5E3B626BC801B00F90A23 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E1F5E3B826BC803400F90A23 /* Movie.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,9 +272,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E1F5E37526BC79A500F90A23 /* ViewController.swift in Sources */,
 				E1F5E37126BC79A500F90A23 /* AppDelegate.swift in Sources */,
 				E1F5E37326BC79A500F90A23 /* SceneDelegate.swift in Sources */,
+				E1F5E3AD26BC7A0D00F90A23 /* HomeViewController.swift in Sources */,
+				E1F5E3B226BC7CE700F90A23 /* DetailViewController.swift in Sources */,
+				E1F5E3B926BC803400F90A23 /* Movie.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,10 +458,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.catadores.Catadores.IMDBTest;
+				PRODUCT_BUNDLE_IDENTIFIER = com.IMDBTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -460,10 +476,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.catadores.Catadores.IMDBTest;
+				PRODUCT_BUNDLE_IDENTIFIER = com.IMDBTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
