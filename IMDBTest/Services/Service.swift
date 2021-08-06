@@ -28,7 +28,7 @@ class Service: NSObject {
                     completion(movieList, nil)
                 }
             } catch let jsonError {
-                print("::: Error decode \(jsonError)")
+                print("::: Error decode MovieList\(jsonError)")
             }
         }.resume()
     }
@@ -50,7 +50,7 @@ class Service: NSObject {
                     completion(movie, nil)
                 }
             }catch let jsonError {
-                print("::: Error decode \(jsonError)")
+                print("::: Error decode Movie \(jsonError)")
             }
         }.resume()
     }

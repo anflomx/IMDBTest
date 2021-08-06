@@ -8,6 +8,6 @@
 import Foundation
 
 struct EndPoint {
-    static let movie = "https://imdb-api.com/en/API/Title/k_m8iq9i32/"
-    static let moviesList = "https://imdb-api.com/en/API/SearchMovie/k_m8iq9i32/star"
+    static let movie = "https://imdb-api.com/en/API/Title/k_hrm4pbs4/"
+    static let moviesList = "https://imdb-api.com/en/API/SearchMovie/k_hrm4pbs4/"
 }

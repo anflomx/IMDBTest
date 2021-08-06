@@ -11,11 +11,25 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var movieListViewModel = [MovieListViewModel]()
+    
+    let searchController = UISearchController(searchResultsController: nil)
+    var timer: Timer?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        configSearchController()
         configCell()
-        fetchMovieList()
+    }
+    
+    private func configSearchController() {
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Buscar"
+        navigationItem.searchController = searchController
+        navigationItem.hidesSearchBarWhenScrolling = false
+        definesPresentationContext = true
+        
+        searchController.searchBar.delegate = self
     }
     
     private func configCell() {
@@ -25,20 +39,21 @@ class HomeViewController: UIViewController {
         tableView.estimatedRowHeight = 120
     }
     
-    fileprivate func fetchMovieList() {
+    fileprivate func fetchMovieList(text: String) {
+        let url = EndPoint.moviesList + text
         let service = Service()
-        self.showSpinner(onView: self.view)
-        service.getMovieList(EndPoint.moviesList) { (result, error) in
+        //self.showSpinner(onView: self.view)
+        service.getMovieList(url) { (result, error) in
             if let error = error {
                 print("::: Fetch MovieListError \(error)")
-                self.removeSpinner()
+                //self.removeSpinner()
                 return
             }
-            
+            self.movieListViewModel.removeAll()
             let movieList = result?.results.map({return  MovieListViewModel(result: $0)}) ?? []
             movieList.forEach { movie in self.movieListViewModel.append(movie) }
             self.tableView.reloadData()
-            self.removeSpinner()
+            //self.removeSpinner()
         }
     }
 }
@@ -58,7 +73,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
+        return 120
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -68,7 +83,25 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         }
         let movieID = self.movieListViewModel[indexPath.row].id
         vc.id = movieID
-        self.show(vc as UIViewController, sender: vc)
-        //self.navigationController?.pushViewController(vc, animated: true)
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+}
+
+extension HomeViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        timer?.invalidate()
+        let txt = searchController.searchBar.text?.lowercased() ?? ""
+        print("::: titulo \(txt)")
+        if !txt.isEmpty {
+            timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: { (_) in
+                self.fetchMovieList(text: txt)
+            })
+        }
+    }
+}
+
+extension HomeViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
+        
     }
 }
