@@ -59,4 +59,14 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = self.getStoryBoard()
+        guard let vc = storyboard.instantiateViewController(identifier: "DetailViewController") as? DetailViewController else {
+            return
+        }
+        let movieID = self.movieListViewModel[indexPath.row].id
+        vc.id = movieID
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }

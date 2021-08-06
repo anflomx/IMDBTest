@@ -35,3 +35,10 @@ extension UIImageView {
         }).resume()
     }
 }
+
+extension UIViewController {
+    func getStoryBoard() -> UIStoryboard {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        return storyBoard
+    }
+}
