@@ -52,6 +52,11 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
             return UITableViewCell()
         }
         cell.movieTitleLabel?.text = movieListViewModel[indexPath.row].title
+        cell.movieImage.loadImageUsingCache(withUrl: movieListViewModel[indexPath.row].image)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
     }
 }
