@@ -17,25 +17,37 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var movieDirector: UILabel!
     
     var id = ""
-    var movie: Movie?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchMovie()
     }
     
-    fileprivate func fetchMovie() {
+    private func fetchMovie() {
         let url = EndPoint.movie + id
         let service = Service()
-        //
+        self.showSpinner(onView: self.view)
         service.getMovie(url) { (result, error) in
             if let error = error {
                 print("::: Fetch MovieError \(error)")
-                //
+                self.removeSpinner()
                 return
             }
-            self.movie = result
-            print(self.movie!)
+            let movieInfo = result.map({return MovieViewModel(movie: $0)})
+            
+            guard let mov = movieInfo else { return }
+            self.fillInfo(movie: mov)
+            self.removeSpinner()
         }
+    }
+    
+    private func fillInfo(movie: MovieViewModel) {
+        movieImage.loadImageUsingCache(withUrl: movie.image ?? "")
+        movieTitle.text = "Título: \(movie.title ?? "")"
+        movieYear.text = "Año: \(movie.year ?? "")"
+        movieGender.text = "Genero: \(movie.genres ?? "")"
+        movieCountry.text = "País: \(movie.countries ?? "")"
+        moviePlot.text = "Sinopsis: \(movie.plot ?? "")"
+        movieDirector.text = "Director: \(movie.directors ?? "")"
     }
 }

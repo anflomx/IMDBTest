@@ -27,17 +27,18 @@ class HomeViewController: UIViewController {
     
     fileprivate func fetchMovieList() {
         let service = Service()
-        //
+        self.showSpinner(onView: self.view)
         service.getMovieList(EndPoint.moviesList) { (result, error) in
             if let error = error {
                 print("::: Fetch MovieListError \(error)")
-                //
+                self.removeSpinner()
                 return
             }
             
             let movieList = result?.results.map({return  MovieListViewModel(result: $0)}) ?? []
             movieList.forEach { movie in self.movieListViewModel.append(movie) }
             self.tableView.reloadData()
+            self.removeSpinner()
         }
     }
 }
@@ -61,12 +62,13 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let storyboard = self.getStoryBoard()
-        guard let vc = storyboard.instantiateViewController(identifier: "DetailViewController") as? DetailViewController else {
+        let st = self.getStoryBoard()
+        guard let vc = st.instantiateViewController(identifier: "DetailViewController") as? DetailViewController else {
             return
         }
         let movieID = self.movieListViewModel[indexPath.row].id
         vc.id = movieID
-        self.navigationController?.pushViewController(vc, animated: true)
+        self.show(vc as UIViewController, sender: vc)
+        //self.navigationController?.pushViewController(vc, animated: true)
     }
 }
