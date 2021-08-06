@@ -31,8 +31,8 @@ class DetailViewController: UIViewController {
         service.getMovie(url) { (result, error) in
             if let error = error {
                 print("::: Fetch MovieError \(error)")
-                self.showAlert(msg: "Error en el servicio: \(error)")
                 self.removeSpinner()
+                self.showAlert(msg: "Error en el servicio: \(error)")
                 return
             }
             let movieInfo = result.map({return MovieViewModel(movie: $0)})
