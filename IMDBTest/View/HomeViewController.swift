@@ -43,16 +43,19 @@ class HomeViewController: UIViewController {
     fileprivate func fetchMovieList(text: String) {
         let url = EndPoint.moviesList + text
         let service = Service()
+        self.showSpinner(onView: self.view)
         service.getMovieList(url) { (result, error) in
             if let error = error {
                 print("::: Fetch MovieListError \(error)")
                 self.showAlert(msg: "Error en el servicio: \(error)")
+                self.removeSpinner()
                 return
             }
             self.movieListViewModel.removeAll()
             let movieList = result?.results.map({return  MovieListViewModel(result: $0)}) ?? []
             movieList.forEach { movie in self.movieListViewModel.append(movie) }
             self.tableView.reloadData()
+            self.removeSpinner()
         }
     }
 }
@@ -91,11 +94,11 @@ extension HomeViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         timer?.invalidate()
         let txt = searchController.searchBar.text?.lowercased() ?? ""
-        print("::: titulo \(txt)")
         if !txt.isEmpty {
             timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: { (_) in
                 self.fetchMovieList(text: txt)
             })
+            self.removeSpinner()
         }
     }
 }
