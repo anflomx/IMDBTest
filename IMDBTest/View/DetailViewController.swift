@@ -20,6 +20,7 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Detail IMDB"
         fetchMovie()
     }
     
@@ -30,6 +31,7 @@ class DetailViewController: UIViewController {
         service.getMovie(url) { (result, error) in
             if let error = error {
                 print("::: Fetch MovieError \(error)")
+                self.showAlert(msg: "Error en el servicio: \(error)")
                 self.removeSpinner()
                 return
             }

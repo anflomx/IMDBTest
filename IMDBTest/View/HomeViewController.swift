@@ -17,6 +17,7 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "IMDB"
         configSearchController()
         configCell()
     }
@@ -42,18 +43,19 @@ class HomeViewController: UIViewController {
     fileprivate func fetchMovieList(text: String) {
         let url = EndPoint.moviesList + text
         let service = Service()
-        //self.showSpinner(onView: self.view)
+        self.showSpinner(onView: self.view)
         service.getMovieList(url) { (result, error) in
             if let error = error {
                 print("::: Fetch MovieListError \(error)")
-                //self.removeSpinner()
+                self.showAlert(msg: "Error en el servicio: \(error)")
+                self.removeSpinner()
                 return
             }
             self.movieListViewModel.removeAll()
             let movieList = result?.results.map({return  MovieListViewModel(result: $0)}) ?? []
             movieList.forEach { movie in self.movieListViewModel.append(movie) }
             self.tableView.reloadData()
-            //self.removeSpinner()
+            self.removeSpinner()
         }
     }
 }
@@ -81,6 +83,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         guard let vc = st.instantiateViewController(identifier: "DetailViewController") as? DetailViewController else {
             return
         }
+        searchController.searchBar.text = ""
         let movieID = self.movieListViewModel[indexPath.row].id
         vc.id = movieID
         self.navigationController?.pushViewController(vc, animated: true)

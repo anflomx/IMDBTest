@@ -63,4 +63,14 @@ extension UIViewController {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         return storyBoard
     }
+    
+    func showAlert(msg: String) {
+        let alertController = UIAlertController(
+            title: "Alert",
+            message: msg,
+            preferredStyle: .alert
+        )
+        alertController.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        present(alertController, animated: true, completion: nil)
+    }
 }
